@@ -43,12 +43,29 @@ public class Graph {
     }
 
     private int knotenHinzufuegen(Datenelement daten) {
-        if (anzahlKnoten == maxAnzahl) {
+        if (anzahlKnoten == knotenfeld.length) {
             System.out.println("Das Feld ist voll, es konnte kein neuer Knoten hinzugefuegt werden.");
-            return 0;
+            return -1;
         }
         knotenfeld[anzahlKnoten] = new Knoten(daten);
         anzahlKnoten = anzahlKnoten + 1;
         return anzahlKnoten;
+    }
+
+    private void kanteHinzufuegen(int start, int ziel, int bewertung) {
+        if (start < knotenfeld.length && ziel < knotenfeld.length) {
+            adjazenmatrix[start][ziel] = bewertung;
+        } else {
+            System.out.println("Es wurde keine Kante erzeugt, da Start- und/oder Zielknoten nicht eixistieren.")
+        }
+    }
+
+    private void kanteLoeschen(int start, int ziel) {
+        int bewertung = -1;
+        if (start < knotenfeld.length && ziel < knotenfeld.length) {
+            adjazenmatrix[start][ziel] = bewertung;
+        } else {
+            System.out.println("Es wurde keine Kante gelöscht, da Start- und/oder Zielknoten nicht eixistieren.")
+        }
     }
 }
