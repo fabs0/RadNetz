@@ -1,13 +1,10 @@
 
-public class TEST
-{
-   
-    public TEST()
-    {
-      
-        
+public class TEST {
+
+    public TEST() {
+
+
     }
 
-   
-    
+
 }

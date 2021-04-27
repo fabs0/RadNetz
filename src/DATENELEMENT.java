@@ -1,6 +1,5 @@
+public abstract class DATENELEMENT {
 
-public abstract class DATENELEMENT
-{
-   public abstract void ausgeben();
-    
+    public abstract void ausgeben();
+
 }

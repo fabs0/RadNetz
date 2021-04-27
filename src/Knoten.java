@@ -1,13 +1,23 @@
 public class Knoten {
 
-   private Datenelement daten;
+    private DATENELEMENT daten;
 
-   public Knoten(Datenelement daten){
-       this.daten = daten;
-   }
+    private boolean markierung;
 
-    public Datenelement getDaten() {
+    public Knoten (DATENELEMENT daten) {
+        this.daten = daten;
+    }
+
+    public DATENELEMENT getDaten() {
         return daten;
+    }
+
+    public boolean markierungGeben() {
+        return markierung;
+    }
+
+    public void markierungSetzen(boolean wert) {
+        markierung = wert;
     }
 
 }
