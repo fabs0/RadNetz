@@ -9,6 +9,7 @@ public class Graph {
         adjazenmatrix = new int[maxAnzahlKnoten][maxAnzahlKnoten];
         anzahlKnoten = 0;
         maxAnzahl = maxAnzahlKnoten;
+        knotenfeld[] = new Knoten(maxAnzahlKnoten); // DEBUGDEBUGBDE
         matrixVorbelegen();
     }
 
@@ -42,8 +43,8 @@ public class Graph {
         }
     }
 
-    private int knotenHinzufuegen(DATENELEMENT daten) {
-        if (anzahlKnoten == knotenfeld.length) {
+    public int knotenHinzufuegen(Datenelement daten) {
+        if (knotenfeld.length == anzahlKnoten) {
             System.out.println("Das Feld ist voll, es konnte kein neuer Knoten hinzugefuegt werden.");
             return -1;
         }
@@ -52,7 +53,7 @@ public class Graph {
         return anzahlKnoten;
     }
 
-    private void kanteHinzufuegen(int start, int ziel, int bewertung) {
+    public void kanteHinzufuegen(int start, int ziel, int bewertung) {
         if (start < knotenfeld.length && ziel < knotenfeld.length) {
             adjazenmatrix[start][ziel] = bewertung;
         } else {
@@ -82,7 +83,7 @@ public class Graph {
         }
     }
 
-    private int tiefensucheDurchfuehren(int KnotenNr) {
+    private void tiefensucheDurchfuehren(int KnotenNr) {
         // Derzeit besuchten Knoten markieren
         knotenfeld[KnotenNr].markierungSetzen(true);
         //Informationen über den Knoten ausgeben

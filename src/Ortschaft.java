@@ -1,4 +1,4 @@
-public class Ortschaft extends DATENELEMENT {
+public class Ortschaft extends Datenelement {
 
     private String name;
     private int uebernachtungsplaetze;
